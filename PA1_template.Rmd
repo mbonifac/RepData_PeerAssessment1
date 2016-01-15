@@ -31,7 +31,6 @@ Create a data frame listing the number of steps recorded each day
 ```{r echo=TRUE}
 meanactivity <- aggregate(activity2$steps, by=list(activity2$date), FUN = "mean")
 colnames(meanactivity) <- c("date", "mean_steps")
-meanactivity
 ```
 
 Create a data frame listing the median number of steps recorded each day
@@ -39,7 +38,6 @@ Create a data frame listing the median number of steps recorded each day
 ```{r echo=TRUE}
 medactivity <- aggregate(activity2$steps, by=list(activity2$date), FUN = "median")
 colnames(medactivity) <- c("date", "median_steps")
-medactivity
 ```
 
 What is the average daily activity pattern?
@@ -88,22 +86,18 @@ to that of the dat set with replaced NAs (dayactivity_sub)
 
 ```{r echo=TRUE}
 dayactivity_mean<-mean(dayactivity$steps)
-dayactivity_mean
 ```
 
 ```{r echo=TRUE}
 dayactivity_median<-median(dayactivity$steps)
-dayactivity_median
 ```
 
 ```{r echo=TRUE}
 dayactivity_sub_mean<-mean(dayactivity_sub$steps)
-dayactivity_sub_mean
 ```
 
 ```{r echo=TRUE}
 dayactivity_sub_median<-median(dayactivity_sub$steps)
-dayactivity_sub_median
 ```
 
 There is little variation between the mean and median values for both data sets
@@ -127,7 +121,6 @@ wkday <- c("Weekday", "Weekday", "Weekday", "Weekday", "Weekday", "Weekend", "We
 daycat<-cbind(day,wkday)
 ## Merge activity4 with daycat to apply weekday/weekend factors
 activity4<-merge(activity4,daycat)
-activity4
 ```
 
 Panel plot containing the time series of the interval vs. average number of steps
